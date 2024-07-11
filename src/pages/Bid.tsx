@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Container from "../components/Container";
 import PageTitle from "../components/PageTitle";
+import PopUp from "../components/PopUp";
 import Product from "../components/Product";
 import { AccountContext } from "../contexts/AccountContext";
 import { BidContext } from "../contexts/BidContext";
-import PopUp from "../components/PopUp";
 
 const Bid = () => {
   

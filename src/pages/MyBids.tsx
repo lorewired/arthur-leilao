@@ -21,6 +21,7 @@ const MyBids = () => {
 
       if (response.status === 200) {
         const data = await response.json();
+        console.log(data);
         setAllBids(data);
       }
 
