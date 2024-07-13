@@ -85,7 +85,7 @@ const Bid = () => {
                       type="number" 
                       placeholder="0"
                       min="1"
-                      max={targetProduct!.price}
+                      max={targetProduct.price ? targetProduct.price : 1000000}
                       required
                       id="bidValue"
                     />
