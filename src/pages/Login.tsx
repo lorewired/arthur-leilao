@@ -20,7 +20,7 @@ const Login = () => {
 
     useEffect(() => {
         if (redirect) {
-            setTimeout(() => /* navigate('/') */console.log('a'), 200);
+            setTimeout(() => navigate('/'), 200);
         }
     }, [redirect, navigate]);
 
