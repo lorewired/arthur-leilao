@@ -49,7 +49,6 @@ const LogoutNavBarLink = ({ logout }: LogoutNavLinkProps) => {
     onClick={() => {
       logout();
       navigate('/signup');
-      window.location.reload();
     }}
     style={{ transition: '.3s all' }}
     className="rounded py-2 px-4 hover:bg-stone-100"
