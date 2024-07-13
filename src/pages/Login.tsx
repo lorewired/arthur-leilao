@@ -31,7 +31,6 @@ const Login = () => {
         if (status_code === 200 || status_code === 201) {
             setTimeout(() => {
                 navigate('/');
-                window.location.reload();
             }, 2000);
         }
     }
