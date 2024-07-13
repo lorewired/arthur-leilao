@@ -44,7 +44,7 @@ const MyProducts = () => {
               ?
                 <div>
                   {allBids.map((bid, index) => (
-                    <div className="h-full flex flex-col gap-10">
+                    <div className="h-full flex gap-10">
                       <div key={index} className="h-full grid grid-cols-4 auto-rows-[300px] overflow-y-auto gap-10 pr-8" >
                         <Product
                           account_id={bid.account_id}
