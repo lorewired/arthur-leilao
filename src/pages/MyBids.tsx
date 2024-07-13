@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react"
-import { ProductTemplateProps } from "../utils/interfaces";
-import { AccountContext } from "../contexts/AccountContext";
+import { useContext, useEffect, useState } from "react";
+import BidCard from "../components/BidCard";
 import Container from "../components/Container";
 import PageTitle from "../components/PageTitle";
-import Product from "../components/Product";
+import { AccountContext } from "../contexts/AccountContext";
+import { BidData } from "../utils/interfaces";
 
 const MyBids = () => {
 
-  const [allBids, setAllBids] = useState<ProductTemplateProps[]>([]);
+  const [allBids, setAllBids] = useState<BidData[]>([]);
 
   const { account } = useContext(AccountContext);
 
@@ -32,7 +32,9 @@ const MyBids = () => {
 
   useEffect(() => {
     getAllBids();
-  }, []);
+  }, [account]);
+
+  useEffect(() => console.log(allBids), []);
 
   return (
     <Container>
@@ -47,14 +49,11 @@ const MyBids = () => {
                   <div
                     key={index}
                   >
-                    <Product
-                      bidCard={false}
-                      id={p.id}
+                    <BidCard
                       account_id={p.account_id}
-                      title={p.title}
-                      description={p.description}
-                      price={p.price}
-                      image_url={p.image_url}
+                      product_id={p.product_id}
+                      bid_value={p.bid_value}
+                      bid_message={p.bid_message}
                     />
                   </div>  
                 ))

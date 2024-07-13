@@ -3,12 +3,16 @@ import { ProductInputProps } from "../utils/interfaces"
 import PageTitle from "./PageTitle"
 
 const ProductInput = (props: ProductInputProps) => {
+
    const [maxValue, setMaxValue] = useState(false);
+   const [announcementType, setAnnouncementType] = useState('prata');
 
    const submitForm = (e: React.FormEvent<EventTarget>) => {
       e.preventDefault();
       props.addProduct();
    }
+
+   const handleAnnouncement = (type: string) => setAnnouncementType(type);
 
    return (
       <div>
@@ -17,6 +21,37 @@ const ProductInput = (props: ProductInputProps) => {
             onSubmit={submitForm}
             className="mt-10 flex flex-col gap-2"
          >
+
+            <div className="flex gap-4 [&>div>*]:text-sm">
+
+               <button
+                  onClick={() => handleAnnouncement('prata')}
+                  style={{borderColor: announcementType === 'prata' ? 'gray' : ''}}
+                  className="flex flex-col items-center justify-center border-2 py-2 px-4 rounded-lg"
+               >
+                  <h3 className="text-lg">Prata</h3>
+                  <p className="text-sm">Taxa básica de 9,99%</p>
+               </button>
+
+               <button
+                  onClick={() => handleAnnouncement('ouro')}
+                  style={{borderColor: announcementType === 'ouro' ? 'gray' : ''}}
+                  className="flex flex-col items-center justify-center border-2 py-2 px-4 rounded-lg"
+               >
+                  <h3 className="text-lg">Ouro</h3>
+                  <p className="text-sm">Taxa de 11,99%</p>
+               </button>
+
+               <button
+                  onClick={() => handleAnnouncement('diamante')}
+                  style={{borderColor: announcementType === 'diamante' ? 'gray' : ''}}
+                  className="flex flex-col items-center justify-center border-2 py-2 px-4 rounded-lg"
+               >
+                  <h3 className="text-lg">Diamante</h3>
+                  <p className="text-sm">Taxa de 12,99%</p>
+               </button>
+
+            </div>
 
             <div className="flex flex-col gap-1">
                <label htmlFor="title" className="text-md ml-1">Title</label>
@@ -86,7 +121,7 @@ const ProductInput = (props: ProductInputProps) => {
             </div>
 
             <input
-               className="bg-gray-200 mt-2 cursor-pointer rounded-lg py-1 transition duration-300 hover:bg-gray-300"
+               className="w-[300px] bg-gray-200 mt-2 cursor-pointer rounded-lg py-1 transition duration-300 hover:bg-gray-300"
                type="submit"
                value="Add"
             />

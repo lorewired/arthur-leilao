@@ -14,7 +14,7 @@ const Product = ({ bidCard, id, title, account_id, description, price, image_url
   
   const getAssociatedAccount = async () => {
     try {
-      const url = `http://localhost:3000/api/account/${account_id}`;
+      const url = `https://arthur-leilao-api-production.up.railway.app/api/account/${account_id}`;
       const response = await fetch(url, {
         method: 'GET',
         headers: {'Content-Type': 'application.json'}

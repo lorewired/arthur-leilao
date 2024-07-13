@@ -17,7 +17,7 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
     
     const getAccount = async (): Promise<number> => {
         try {
-            const response = await fetch("http://localhost:3000/api/account/auth", {
+            const response = await fetch("https://arthur-leilao-api-production.up.railway.app/api/account/auth", {
                 credentials: 'include'
             });
             if (response.ok) {
@@ -36,7 +36,7 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
 
     const loginAccount = async (accountDto: AccountDTO): Promise<number> => {
         try {
-            const url = "http://localhost:3000/api/account/login";
+            const url = "https://arthur-leilao-api-production.up.railway.app/api/account/login";
             const response = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(accountDto),
@@ -53,7 +53,7 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
 
     const signupAccount = async (accountDto: AccountDTO): Promise<number> => {
         try {
-            const url = "http://localhost:3000/api/account/signup";
+            const url = "https://arthur-leilao-api-production.up.railway.app/api/account/signup";
             const response = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(accountDto),
@@ -68,7 +68,7 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
 
     const logoutAccount = async (): Promise<void> => {
         try {
-            const url = "http://localhost:3000/api/account/logout";
+            const url = "https://arthur-leilao-api-production.up.railway.app/api/account/logout";
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

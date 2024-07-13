@@ -24,7 +24,7 @@ export const BidProvider = ({ children }: AccountProviderProps) => {
 
    const addBid = async (): Promise<number> => {
       try {
-         const url = `http://localhost:3000/api/bid/account/${account?.id}/product/${targetProduct?.id}`;
+         const url = `https://arthur-leilao-api-production.up.railway.app/api/bid/account/${account?.id}/product/${targetProduct?.id}`;
          const response = await fetch(url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},

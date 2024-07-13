@@ -78,3 +78,17 @@ export interface BidContextType {
     bidMessage: string;
     addBid: () => undefined | Promise<number>;
 }
+
+export interface BidCardProps {
+    account_id: string;
+    title: string;
+    description: string;
+    price: number;
+}
+
+export interface BidData {
+    account_id: string;
+    product_id: string;
+    bid_value: number;
+    bid_message: string;
+}
