@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/logout"
+to = "/index.html"
+status = 200
