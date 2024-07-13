@@ -25,7 +25,7 @@ const AddProduct = () => {
     if (anyInvalidCredential) return;
 
     try {
-      const response = await fetch('http://localhost:3000/api/product', {
+      const response = await fetch('https://arthur-leilao-api-production.up.railway.app/api/product', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
