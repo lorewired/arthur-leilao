@@ -34,9 +34,6 @@ export const BidProvider = ({ children }: AccountProviderProps) => {
             })
          });
 
-         const data = await response.json();
-         console.log(data);
-
          return response.status;
       } catch (e) {
          console.error(e);
