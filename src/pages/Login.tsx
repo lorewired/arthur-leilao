@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Container from "../components/Container"
 import PageTitle from "../components/PageTitle"
@@ -10,11 +10,19 @@ const Login = () => {
     const [popupColor, setPopupColor] = useState('');
     const [popupMargin, setPopupMargin] = useState('-200px');
 
+    const [redirect, setRedirect] = useState(false);
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const context = useContext(AccountContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (redirect) {
+            setTimeout(() => navigate('/'), 200);
+        }
+    }, [redirect, navigate]);
 
     const submitForm = async (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
@@ -29,9 +37,7 @@ const Login = () => {
         setPassword('');
 
         if (status_code === 200 || status_code === 201) {
-            setTimeout(() => {
-                navigate('/');
-            }, 2000);
+            setRedirect(true);
         }
     }
 
