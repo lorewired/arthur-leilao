@@ -72,6 +72,7 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include'
             });
             if (response.ok) {
                 setAccount(undefined);
