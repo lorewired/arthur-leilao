@@ -44,9 +44,9 @@ const MyProducts = () => {
               ?
                 <div>
                   {allBids.map((bid, index) => (
-                    <div key={index}>
+                    <div key={index} className="h-full grid grid-cols-4 auto-rows-[300px] overflow-y-auto gap-10 pr-8" >
                       <Product
-                        account_id={account.id}
+                        account_id={bid.account_id}
                         bidCard={false}
                         title={bid.title}
                         description={bid.description}
