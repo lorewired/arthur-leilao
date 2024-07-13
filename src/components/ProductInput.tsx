@@ -23,7 +23,7 @@ const ProductInput = (props: ProductInputProps) => {
             <div
                onClick={() => handleAnnouncement('prata')}
                style={{ borderColor: announcementType === 'prata' ? 'gray' : '' }}
-               className="flex flex-col items-center justify-center border-2 py-2 px-4 rounded-lg"
+               className="flex flex-col items-center cursor-pointer justify-center border-2 py-2 px-4 rounded-lg"
             >
                <h3 className="text-lg">Prata</h3>
                <p className="text-sm">Taxa básica de 9,99%</p>
@@ -32,7 +32,7 @@ const ProductInput = (props: ProductInputProps) => {
             <div
                onClick={() => handleAnnouncement('ouro')}
                style={{ borderColor: announcementType === 'ouro' ? 'gray' : '' }}
-               className="flex flex-col items-center justify-center border-2 py-2 px-4 rounded-lg"
+               className="flex flex-col items-center cursor-pointer justify-center border-2 py-2 px-4 rounded-lg"
             >
                <h3 className="text-lg">Ouro</h3>
                <p className="text-sm">Taxa de 11,99%</p>
@@ -41,7 +41,7 @@ const ProductInput = (props: ProductInputProps) => {
             <div
                onClick={() => handleAnnouncement('diamante')}
                style={{ borderColor: announcementType === 'diamante' ? 'gray' : '' }}
-               className="flex flex-col items-center justify-center border-2 py-2 px-4 rounded-lg"
+               className="flex flex-col items-center cursor-pointer justify-center border-2 py-2 px-4 rounded-lg"
             >
                <h3 className="text-lg">Diamante</h3>
                <p className="text-sm">Taxa de 12,99%</p>
