@@ -9,7 +9,7 @@ const Products = () => {
 
   const getAllProducts = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/products');
+      const response = await fetch('https://arthur-leilao-api-production.up.railway.app/api/products');
       if (response.status === 200) {
         const data = await response.json();
         setProducts(data);

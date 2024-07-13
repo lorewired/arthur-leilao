@@ -13,7 +13,7 @@ const MyBids = () => {
 
   const getAllBids = async () => {
     try {
-      const url = `http://localhost:3000/api/bid/account/${account?.id}`;
+      const url = `https://arthur-leilao-api-production.up.railway.app/api/bid/account/${account?.id}`;
       const response = await fetch(url, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
