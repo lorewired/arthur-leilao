@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { AccountContextType, AccountDTO, AccountData, AccountProviderProps } from "../utils/interfaces";
+import Cookies from 'js-cookie';
 
 const defaultContextValue: AccountContextType = {
     getAccount: async () => 500,
@@ -17,6 +18,9 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
     
     const getAccount = async (): Promise<number> => {
         try {
+            const jwt = Cookies.get('jwt');
+            console.log(jwt);
+
             const response = await fetch("https://arthur-leilao-api-production.up.railway.app/api/account/auth", {
                 credentials: 'include'
             });
