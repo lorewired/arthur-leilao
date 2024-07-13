@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { AccountData, BidCardProps, BidData } from "../utils/interfaces";
+import { AccountData, BidCardProps } from "../utils/interfaces";
 
 const BidCard = ({ account_id, product_id, bid_value, bid_message }: {account_id: string, product_id: string, bid_value: number, bid_message: string }) => {
 
    const [owner, setOwner] = useState<AccountData | null>(null);
-   const [bid, setBid] = useState<BidData | null>(null);
    const [product, setProduct] = useState<BidCardProps | null>(null);
 
    const getOwner = async () => {
@@ -18,7 +17,7 @@ const BidCard = ({ account_id, product_id, bid_value, bid_message }: {account_id
          if (response.status === 200) {
             const data = await response.json();
             setOwner(data);
-            await getBidData();
+            await getProductData();
          }
       } catch (e) {
          console.error(e);
@@ -37,25 +36,6 @@ const BidCard = ({ account_id, product_id, bid_value, bid_message }: {account_id
             const data = await response.json();
             console.log(data);
             setProduct(data);
-         }
-      } catch (e) {
-         console.error(e);
-      }
-   }
-   
-   const getBidData = async () => {
-      try {
-         const url = `https://arthur-leilao-api-production.up.railway.app/api/bid/account/${account_id}/product/${product_id}`;
-         const response = await fetch(url, {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-         });
-
-         if (response.status === 200) {
-            const data = await response.json();
-            console.log(data);
-            setBid(data);
-            await getProductData();
          }
       } catch (e) {
          console.error(e);
