@@ -42,7 +42,7 @@ const MyProducts = () => {
             {
               allBids && allBids.length > 0
                 ?
-                <div className="h-full flex grid grid-cols-4 auto-rows-[300px] overflow-y-auto gap-10 pr-8">
+                <div className="h-full grid grid-cols-4 auto-rows-[300px] overflow-y-auto gap-10 pr-8">
                   {allBids.map((bid, index) => (
                     <div key={index} >
                       <Product
