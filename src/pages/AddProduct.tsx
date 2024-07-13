@@ -41,7 +41,6 @@ const AddProduct = () => {
 
       if (response.status === 201) {
         const data: ProductInsertedData = await response.json();
-        console.log(data.inserted_id)
         associateProductWithAccount(data.inserted_id);
       }
       
@@ -59,16 +58,12 @@ const AddProduct = () => {
     try {
       if (id === '') return;
 
-      console.log(id);
-
       const url = `https://arthur-leilao-api-production.up.railway.app/api/account/${account?.id}/product/${id}`;
-      const response = await fetch(url, {
+      await fetch(url, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'}
       });
 
-      const data = await response.json();
-      console.log('status associate: ' + data);
 
     } catch (e) {
       console.error(e);
