@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import { AccountContextType, AccountDTO, AccountData, AccountProviderProps } from "../utils/interfaces";
-import Cookies from 'js-cookie';
 
 const defaultContextValue: AccountContextType = {
     getAccount: async () => 500,
