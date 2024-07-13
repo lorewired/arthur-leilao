@@ -34,7 +34,6 @@ const BidCard = ({ account_id, product_id, bid_value, bid_message }: {account_id
 
          if (response.status === 200) {
             const data = await response.json();
-            console.log(data);
             setProduct(data);
          }
       } catch (e) {
